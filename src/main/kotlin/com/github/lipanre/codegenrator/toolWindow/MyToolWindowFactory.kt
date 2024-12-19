@@ -41,19 +41,6 @@ class MyToolWindowFactory : ToolWindowFactory {
 
         private lateinit var panel: DialogPanel
 
-        private val observer = object : ObservableMutableProperty<String> {
-
-
-            override fun set(value: String) {
-                dataModal.text = value
-            }
-
-            override fun get(): String {
-                return dataModal.text
-            }
-
-        }
-
 //        private val textField: JBTextField = JBTextField()
 
 //        fun getContent() = JBPanel<JBPanel<*>>().apply {
@@ -70,13 +57,12 @@ class MyToolWindowFactory : ToolWindowFactory {
         fun getContent() = JBPanel<JBPanel<*>>().apply {
             panel = panel {
                 row {
-                    val textField = textField().bindText(observer)
+                    val textField = textField().bindText(dataModal::text)
                     button(MyBundle.message("shuffle")) {
-                        thisLogger().warn("before data Modal text is: ${dataModal.text}")
-                        observer.set(MyBundle.message("randomLabel", service.getRandomNumber()))
-                        thisLogger().warn("after data Modal text is: ${dataModal.text}")
-//                        textField.text(dataModal.text)
+//                        dataModal.text = MyBundle.message("randomLabel", service.getRandomNumber())
+                        textField.text(MyBundle.message("randomLabel", service.getRandomNumber()))
                         panel.apply()
+                        thisLogger().warn("after apply data Modal text is: ${dataModal.text}")
                     }
                 }
             }
