@@ -1,4 +1,4 @@
-package com.github.lipanre.codegenrator.listeners
+package com.github.lipanre.code.generator.listeners
 
 import com.intellij.openapi.application.ApplicationActivationListener
 import com.intellij.openapi.diagnostic.thisLogger

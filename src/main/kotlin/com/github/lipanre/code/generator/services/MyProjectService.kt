@@ -1,9 +1,9 @@
-package com.github.lipanre.codegenrator.services
+package com.github.lipanre.code.generator.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import com.github.lipanre.codegenrator.MyBundle
+import com.github.lipanre.code.generator.MyBundle
 
 @Service(Service.Level.PROJECT)
 class MyProjectService(project: Project) {

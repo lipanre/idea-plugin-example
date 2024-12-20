@@ -1,4 +1,4 @@
-package com.github.lipanre.codegenrator
+package com.github.lipanre.code.generator
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls
